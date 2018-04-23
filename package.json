@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/g-szerminski/zadanie19.4#readme",
   "dependencies": {
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "redux": "^3.7.2"
   }
 }
