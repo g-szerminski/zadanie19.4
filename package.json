@@ -1,0 +1,23 @@
+{
+  "name": "zadanie19.4",
+  "version": "1.0.0",
+  "description": "19 - Redux - aplikacja pod kontrolą<br>\r 19.4 - Reducer - zmieniamy stan aplikacji<br>\r Zadanie: Wydzielenie reducera dla komentarzy",
+  "main": "actions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g-szerminski/zadanie19.4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/g-szerminski/zadanie19.4/issues"
+  },
+  "homepage": "https://github.com/g-szerminski/zadanie19.4#readme",
+  "dependencies": {
+    "uuid": "^3.2.1"
+  }
+}
