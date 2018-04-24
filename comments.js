@@ -21,53 +21,34 @@ export const comments = (state = [], action) => {
             break;
 
         case EDIT_COMMENT:
-            const check = state.comments.find(comment => (comment.id === action.id));
-            if (check) {
-                const index = state.comments.indexOf(check);
-                return [
-                   ...state.comments.slice(0, index),
-                   {...state.comments[index], text: action.text},
-                   ...state.comments.slice(index+1, state.comments.length)
-                ];
-            } else {
-                return state;
+            return state.comments.map(comment => {
+            if (comment.id === action.id) {
+                comment.text = action.text;
+                return comment;
             }
-            break;
+            return comment;
+        });
 
         case THUMB_UP_COMMENT:
-            const check = state.comments.find(comment => (comment.id === action.id));
-            if (check) {
-                const index = state.comments.indexOf(check);
-                return [
-                   ...state.comments.slice(0, index),
-                   {...state.comments[index], votesUp: state.comments[index].votesUp + 1},
-                   ...state.comments.slice(index+1, state.comments.length)
-                ];
-            } else {
-                return state;
+            return state.map(comment => {
+            if (comment.id === action.id) {
+                return { ...comment,
+                votes: comment.votes + 1
+                }
             }
-            break;
+            return comment;
+        });
 
         case THUMB_DOWN_COMMENT:
-            const check = state.comments.find(comment => (comment.id === action.id));
-            if (check) {
-                const index = state.comments.indexOf(check);
-                return [
-                   ...state.comments.slice(0, index),
-                   {...state.comments[index], votesDown: state.comments[index].votesDown + 1},
-                   ...state.comments.slice(index+1, state.comments.length)
-                ];
-            } else {
-                return state;
+            return state.map(comment => {
+            if (comment.id === action.id) {
+                return { ...comment,
+                votes: comment.votes - 1
+                }
             }
-            break;
-
-        case REMOVE_COMMENT:
-            return state.comments.filter(comment => comment.id !== action.id);
-            break;
-
+            return comment;
+        });
         default:
-            return state;
+        return state;
     }
-    
-}
+};

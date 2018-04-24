@@ -17,7 +17,7 @@ const addComment = text => {
 const boundAddComment = text => dispatch(addComment(text));
 
 // EDIT COMMENT
-const editComment = text => {
+const editComment = (text, id) => {
 	return {
 		type: EDIT_COMMENT,
 		text,
